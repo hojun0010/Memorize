@@ -1,4 +1,4 @@
-//화면에 프로젝트를 추가
+//화면에 과목를 추가 - 현재화면은 과목 선택 상황 ex) 일본어를 선택한후 jlpt 5급 ~ 1급 중 선택하는 상황
 
 package com.example.myapplication
 
@@ -13,7 +13,7 @@ import androidx.appcompat.app.AlertDialog
 
 
 
-class ProjectAdd : AppCompatActivity() {
+class SubjectAdd : AppCompatActivity() {
     private var mBinding: SubjectSelectBinding? = null
     //매번 null 체크를 할 필요 없이 편의성을 위해 바인딩 변수 재 선언
     private val binding get() = mBinding!!
@@ -28,8 +28,11 @@ class ProjectAdd : AppCompatActivity() {
         val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(R.layout.subject_select, null)
 
-        val alertDialog = AlertDialog.Builder(this)
-            .setTitle("추가할 프로젝트명")
+        val subjectadddialog = SubjectAddDialog(this)
+        binding.subjectAddBtn.setOnClickListener {
+            subjectadddialog.MysubjectadddDdalog()
+        }
+
     }
 
     fun toast(message: String) {

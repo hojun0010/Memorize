@@ -1,10 +1,10 @@
+//
+
 package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.SubjectSelectBinding
-import com.example.myapplication.databinding.TestSelectBinding.inflate
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
@@ -32,9 +32,10 @@ class SubjectSelection : AppCompatActivity() {
         //뷰 id도 파스칼케이스 + 카멜케이스의 네이밍 규칙 적용으로 인해서 rv_subject -> rvSubject로 자동 변역됨
 
         //맨처음 기동시 subject file이 있는지 체크
-
+        //프로젝트 추가 버튼 클릭시? 인듯?
         binding.rvSubject.adapter = SubjectRecyclerViewAdapter(readSubjectData())
 
+        //과목 추가 버튼 클릭시 커스텀 다이얼로그 작동
         binding.subjectAddBtn.setOnClickListener{
             val dialog = SubjectAddDialog(this)
             dialog.myDig()
@@ -68,7 +69,6 @@ class SubjectSelection : AppCompatActivity() {
         buffer.close()
         return subjectlist
         //현재 subject 저장 텍스트파일의 형태는 과목명\n 반복의 형태
-
     }
     //프로젝트를 추가할 경우 데이터 텍스트에 목록을 추가
     /*todo*/
