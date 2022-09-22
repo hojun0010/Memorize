@@ -1,3 +1,5 @@
+//화면에 프로젝트를 추가
+
 package com.example.myapplication
 
 import android.content.Context
@@ -11,7 +13,7 @@ import androidx.appcompat.app.AlertDialog
 
 
 
-class SubjectAdd : AppCompatActivity() {
+class ProjectAdd : AppCompatActivity() {
     private var mBinding: SubjectSelectBinding? = null
     //매번 null 체크를 할 필요 없이 편의성을 위해 바인딩 변수 재 선언
     private val binding get() = mBinding!!

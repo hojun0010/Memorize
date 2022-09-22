@@ -1,3 +1,5 @@
+//프로젝트 추가 완료시 스크롤뷰에 리사이클러뷰로 정의된 커스텀 리사이클러뷰 형태로 프로젝트를 전사
+
 package com.example.myapplication
 
 import android.view.LayoutInflater
@@ -6,11 +8,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class SubjectRecyclerViewAdapter (val subjectList : ArrayList<Subject>) :
-    RecyclerView.Adapter<SubjectRecyclerViewAdapter.CustomViewHolder>() {
+class ProjectRecyclerViewAdapter (val subjectList : ArrayList<Subject>) :
+    RecyclerView.Adapter<ProjectRecyclerViewAdapter.CustomViewHolder>() {
 
     //activity main의 oncreate와 비슷한 역할. 미리 만들어둔 list를 원하는 화면에 붙이는 역할
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): SubjectRecyclerViewAdapter.CustomViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ProjectRecyclerViewAdapter.CustomViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context) //context란 activity에서 담고있는 모든 정보
             .inflate(R.layout.subject_list_item, viewGroup, false)
